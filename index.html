@@ -3,25 +3,58 @@
     <head> 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Zadanie 5 - Technologie Webowe</title>
+        <title>Zadanie 6 - Technologie Webowe</title>
     </head>
 
-    <body class="flex items-center justify-center min-h-screen bg-gray-50">
-        <div class="text-center">
-            <h1 class="text-2xl font-bold text-primary mb-6">Wprowadź datę urodzenia</h1>
-            <form id="birthday-form" class="flex flex-col gap-4">
-                <input type="date" id="birthday-input" required class="border p-2"/>
-                <button type="submit" class="bg-blue-300 p-4 font-bold rounded">
-                    OBLICZ
-                </button>
-            </form>
+    <body class="bg-gray-100 text-gray-800 p-8 font-sans">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-6 text-center">Moje Artykuły</h1>
+
+    <div class="mb-6 flex justify-end">
+      <label for="sortSelect" class="mr-3 font-semibold self-center">Sortuj:</label>
+      <select id="sortSelect" class="border border-gray-300 rounded p-2 focus:outline-none focus:border-blue-500">
+        <option value="created_at.desc">Po dacie malejąco</option>
+        <option value="created_at.asc">Po dacie rosnąco</option>
+        <option value="title.asc">Po nazwie alfabetycznie</option>
+      </select>
+    </div>
+
+    <div id="articlesList" class="space-y-6 mb-12">
+      <p class="text-center text-gray-500">Ładowanie artykułów...</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-4">Dodaj nowy artykuł</h2>
+      <form id="addArticleForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-bold mb-1">Tytuł *</label>
+          <input type="text" id="title" required class="w-full border rounded p-2">
         </div>
+        <div>
+          <label class="block text-sm font-bold mb-1">Podtytuł</label>
+          <input type="text" id="subtitle" class="w-full border rounded p-2">
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-1">Autor *</label>
+          <input type="text" id="author" required class="w-full border rounded p-2">
+        </div>
+        <!-- Pole created_at (Zadanie dodatkowe) -->
+        <div>
+          <label class="block text-sm font-bold mb-1">Data utworzenia</label>
+          <input type="datetime-local" id="created_at" class="w-full border rounded p-2">
+        </div>
+        <div>
+          <label class="block text-sm font-bold mb-1">Treść *</label>
+          <textarea id="content" required rows="4" class="w-full border rounded p-2"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 w-full">
+          Wyślij zapytanie i dodaj artykuł
+        </button>
+      </form>
+    </div>
+  </div>
 
-        <dialog id="result-dialog" class="bg-gray-200 text-red-600 p-8 relative rounded-lg shadow-xl w-96">
-            <button id="close-dialog" class="absolute top-2 right-2 font-bold px-2 text-xl hover:text-red-800">x</button>
-            <div id="dialog-content" class="mt-4 text-center"></div>
-        </dialog>
+  <script type="module" src="/main.js"></script>
+</body>
 
-        <script type="module" src="/src/main.js"></script>
-    </body>
 </html>
