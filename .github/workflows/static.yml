@@ -33,7 +33,7 @@ jobs:
         run: npm install
         
       - name: Build project
-        run: npm run build -- --base=/zadanie-6/
+        run: npm run build -- --base=/Zadanie-6-Technologie-Webowe/
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
