@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl"> 
+    <head> 
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zadanie 5 - Technologie Webowe</title>
+    </head>
+
+    <body class="flex items-center justify-center min-h-screen bg-gray-50">
+        <div class="text-center">
+            <h1 class="text-2xl font-bold text-primary mb-6">Wprowadź datę urodzenia</h1>
+            <form id="birthday-form" class="flex flex-col gap-4">
+                <input type="date" id="birthday-input" required class="border p-2"/>
+                <button type="submit" class="bg-blue-300 p-4 font-bold rounded">
+                    OBLICZ
+                </button>
+            </form>
+        </div>
+
+        <dialog id="result-dialog" class="bg-gray-200 text-red-600 p-8 relative rounded-lg shadow-xl w-96">
+            <button id="close-dialog" class="absolute top-2 right-2 font-bold px-2 text-xl hover:text-red-800">x</button>
+            <div id="dialog-content" class="mt-4 text-center"></div>
+        </dialog>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>
